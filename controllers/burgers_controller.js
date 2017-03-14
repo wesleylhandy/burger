@@ -8,6 +8,10 @@ module.exports = function(app) {
 	const router = express.Router();
 	
 	router.use(methodOverride("_method"));
+
+	router.get("/", (req, res)=> {
+		res.redirect("/index");
+	});
  
  	router.get("/index", (req,res)=>{
  		connection.selectAll().then((burgers)=>{
