@@ -5,3 +5,8 @@ body {
 .right {
 	float: right;
 }
+
+.burgers {
+	max-height: 171px;
+	overflow: auto;
+}
