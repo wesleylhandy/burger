@@ -22,7 +22,7 @@
           <li class="list-group-item">
               {{id}}. {{burger_name}}
               <span class="right">
-                <form action="/?_method=PUT" method="POST">
+                <form action="/update?_method=PUT" method="POST">
                   <input type="hidden" name="id" value="{{id}}">
                   <button type="submit" class="badge">Devour</button>
                 </form>

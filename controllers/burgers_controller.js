@@ -9,7 +9,7 @@ module.exports = function(app) {
 	
 	router.use(methodOverride("_method"));
  
- 	router.get("/", (req,res)=>{
+ 	router.get("/index", (req,res)=>{
  		connection.selectAll().then((burgers)=>{
  			res.render("index", {burgers:burgers});
  		}).catch((err)=>{
@@ -20,15 +20,15 @@ module.exports = function(app) {
 
  	router.post("/new", (req,res)=>{
  		connection.insertOne(req.body.burger_name).then((success)=>{
- 			res.redirect("/");
+ 			res.redirect("/index");
  		}).catch((err)=>{
  			res.sendStatus(503).json(err);
  		});
  	});
 
- 	router.put("/", (req, res)=>{
+ 	router.put("/update", (req, res)=>{
  		connection.updateOne(req.body.id).then((success)=>{
- 			res.redirect("/");
+ 			res.redirect("/index");
  		}).catch((err)=>{
  			res.sendStatus(503).json(err);
  		});
